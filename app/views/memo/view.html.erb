@@ -3,9 +3,17 @@
         <h1><%= @post.title %></h1>
     </div>
     <hr>
-    <div style="margin-top:30px; text-align:right;">
-        <div>작성자</div>
-        <div>작성시간</div>
+    <div style="text-align:right; margin-top:30px; text-decoration:none;">
+        <a href="/memo/edit/<%= @post.id %>">
+            <span class="badge badge-warning">수정</span>
+        </a>
+        <a href="/memo/destroy/<%= @post.id %>">
+            <span class="badge badge-danger">삭제</span>
+        </a>
+        <div style="margin-top:5px;">
+            <div>작성자 : 유저정보 넣을 곳!</div>
+            <div>작성시간 : <%= @post.created_at.to_s.split("+").first %></div>
+        </div>
     </div>
     <div style="margin-bottom:50px; margin-top:20px;">
         <h5><%= @post.content %></h6>
